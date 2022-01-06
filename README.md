@@ -1,12 +1,14 @@
 # my-store
-
+اعمل (clone)  للمشرع على جهازك 
 ## Project setup
 ```
+قم بتحميل مكتبات المشروع بكتابة الامر التالي
 npm install
 ```
 
 ### Compiles and hot-reloads for development
 ```
+قم بكتابة الامر التالي  لتشغيل النشروع على (localhost:8080)
 npm run serve
 ```
 

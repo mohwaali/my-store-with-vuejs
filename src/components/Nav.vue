@@ -34,10 +34,9 @@
   </div>
 
   <!-- 
-    nav bar hiden in mobaile
+    nav bar hiden in mobile
  -->
   <div id="nav" :class="{ 'nav-borger-hide': nav_borger_hide }">
-    
     <router-link class="nav-borger-hide-image" to="/">
       <div id="logo">
         <img
@@ -54,12 +53,14 @@
     </router-link>
 
     <div class="nav-menu">
-      <router-link to="/" @click="nav_borger_hide__click">{{ $store.state.Lange.vendor }}</router-link>
-      <router-link to="/about" @click="nav_borger_hide__click"
-        > {{ $store.state.Lange.imported }} </router-link
-      >
-      <router-link to="/products" @click="nav_borger_hide__click"
-        > {{ $store.state.Lange.stores }}</router-link
+      <router-link to="/" @click="nav_borger_hide__click">{{
+        $store.state.Lange.vendor
+      }}</router-link>
+      <router-link to="/about" @click="nav_borger_hide__click">
+        {{ $store.state.Lange.imported }}
+      </router-link>
+      <router-link to="/products" @click="nav_borger_hide__click">
+        {{ $store.state.Lange.stores }}</router-link
       >
     </div>
 
@@ -91,7 +92,7 @@
       </ul>
       <!--div class="header__cart__price">item: <span>$150.00</span></div-->
     </div>
-      <!-- hero__search__form -->
+    <!-- hero__search__form -->
     <div
       class="hero__search__form"
       :class="{ hero__search__form_hids: hero__search__form_hide }"
@@ -106,52 +107,55 @@
           <fa v-if="hero__search__down" icon="chevron-up"></fa>
         </div>
         <input type="text" placeholder="What do yo u need?" />
-        <button type="submit" class="site-btn is-primary ">
+        <button type="submit" class="site-btn is-primary">
           <span class="icon fa-lg"> <fa icon="search"></fa> </span>
         </button>
       </form>
 
       <div v-if="hero__search__down" class="hero__search__down">
-        sdsds
-        عرض اقسام البحث
+        sdsds عرض اقسام البحث
       </div>
     </div>
 
     <nav class="navbar" role="navigation" aria-label="main navigation">
+      <!-- nav link item user and auth login signup logaut link profile -->
 
-    <!-- nav link item user and auth login signup logaut link profile -->
-    
       <div
-        class="navbar-item has-dropdown is-hoverable  "
+        class="navbar-item has-dropdown is-hoverable"
         :class="{ 'navbar-item-users': navbar_item_user }"
       >
         <a class="navbar-link" v-if="navbar_item_user">
           <span v-if="$store.state.coockies">
-            <fa :icon="['fas', 'user']" class="fa-lg"/>
+            <fa :icon="['fas', 'user']" class="fa-lg" />
           </span>
           <span v-if="!$store.state.coockies">
-            <img :src="photoURLs"  alt="M" />
+            <img :src="photoURLs" alt="M" />
           </span>
           <span class="globe-lang"> 3</span>
         </a>
 
         <div class="navbar-dropdown">
- 
           <router-link
-            v-if="$store.state.coockies" @click="nav_borger_hide__click"
+            v-if="$store.state.coockies"
+            @click="nav_borger_hide__click"
             class="navbar-item"
             to="/register"
             >REGISTER</router-link
           >
 
           <router-link
-            v-if="$store.state.coockies" @click="nav_borger_hide__click"
+            v-if="$store.state.coockies"
+            @click="nav_borger_hide__click"
             class="navbar-item"
             to="/login"
             >login</router-link
           >
           <span v-if="!$store.state.coockies">
-             <router-link  @click="nav_borger_hide__click" class="navbar-item" to="/profile">
+            <router-link
+              @click="nav_borger_hide__click"
+              class="navbar-item"
+              to="/profile"
+            >
               {{ displayNames }}
             </router-link>
 
@@ -160,37 +164,46 @@
                 <span v-if="!shackEmaileCookie">
                   <span @click="postDataAll"> تفعييل الحساب </span>
 
-                  <span v-if="loding">loding ... </span> 
+                  <span v-if="loding">loding ... </span>
                   <span v-else>{{ sendEmailVerifi }}</span>
                 </span>
 
-                  <span v-else>
-                     تم ارسال رابط التفعيل الى بريدك <br />
-                          <span @click="postDataAll">اعادة ارسال رابط التفعييل </span><br/>
-                          <span v-if="loding">loding ... </span> 
-                          <span v-else>{{ sendEmailVerifi }}</span>
-                  </span>
+                <span v-else>
+                  تم ارسال رابط التفعيل الى بريدك <br />
+                  <span @click="postDataAll">اعادة ارسال رابط التفعييل </span
+                  ><br />
+                  <span v-if="loding">loding ... </span>
+                  <span v-else>{{ sendEmailVerifi }}</span>
+                </span>
               </span>
               <span v-else> الحساب مفعل </span>
             </a>
           </span>
 
           <hr class="navbar-divider" />
-          <a v-if="!$store.state.coockies" class="navbar-item" @click="logout() ,nav_borger_hide__click()">
+          <a
+            v-if="!$store.state.coockies"
+            class="navbar-item"
+            @click="logout(), nav_borger_hide__click()"
+          >
             logout
           </a>
         </div>
       </div>
-<!--fin-->
-<!--nav link shange lange ar fr en -->
+      <!--fin-->
+      <!--nav link shange lange ar fr en -->
       <div
-        class="navbar-item has-dropdown is-hoverable  "
+        class="navbar-item has-dropdown is-hoverable"
         :class="{ 'navbar-item-globes': navbar_item_globe }"
       >
-        <a class="navbar-link" v-if="navbar_item_globe" style="position:relative;">
-          <fa class="icon-is-success fa-lg"  :icon="['fas', 'globe']" />
+        <a
+          class="navbar-link"
+          v-if="navbar_item_globe"
+          style="position: relative"
+        >
+          <fa class="icon-is-success fa-lg" :icon="['fas', 'globe']" />
 
-            <span class="globe-lang"> {{ $store.state.coockeilang }}</span>
+          <span class="globe-lang"> {{ $store.state.coockeilang }}</span>
         </a>
 
         <div class="navbar-dropdown">
@@ -199,58 +212,44 @@
             v-for="(ln, index) in $store.state.langs"
             :key="index"
           >
-            <span @click="myshangelange(ln) , nav_borger_hide__click()">
+            <span @click="myshangelange(ln), nav_borger_hide__click()">
               <fa :icon="['fas', 'language']" /> {{ ln }}
             </span>
-           
           </a>
         </div>
       </div>
-<!--fin...-->
- 
+      <!--fin...-->
+
       <div
-        class="navbar-item has-dropdown is-hoverable  "
+        class="navbar-item has-dropdown is-hoverable"
         :class="{ 'navbar-item-hearts': navbar_item_heart }"
       >
-      
-
         <div class="navbar-dropdown">
-          <a class="navbar-item">
-            About navbar-item-heartsيس سيسيسيسيسي
-          </a>
-          <a class="navbar-item">
-            Jobs navbar-item-heartsسيسيسيسي
-          </a>
+          <a class="navbar-item"> About navbar-item-heartsيس سيسيسيسيسي </a>
+          <a class="navbar-item"> Jobs navbar-item-heartsسيسيسيسي </a>
         </div>
       </div>
 
       <div
-        class="navbar-item has-dropdown is-hoverable  "
+        class="navbar-item has-dropdown is-hoverable"
         :class="{ 'navbar-item-shoppings': navbar_item_shopping }"
       >
-       
-
         <div class="navbar-dropdown">
-          <a class="navbar-item">
-            About shopping-bag
-          </a>
-          <a class="navbar-item">
-            Jobs shopping-bag
-          </a>
+          <a class="navbar-item"> About shopping-bag </a>
+          <a class="navbar-item"> Jobs shopping-bag </a>
         </div>
       </div>
     </nav>
     <div class="header_cart">
       <ul>
-          <li >
+        <li>
           <label><fa icon="heart"></fa> <span>1</span></label>
         </li>
-        <li >
+        <li>
           <label><fa icon="shopping-bag"></fa> <span>3</span></label>
         </li>
-    </ul>
+      </ul>
     </div>
-  
   </div>
   <!-- 
  nav bar hiden in mobaile
@@ -371,7 +370,7 @@ export default {
         }
       });
     });
-//------------------------------------------------------
+    //------------------------------------------------------
     const logoLoadtoggle = () => {
       console.log("monted");
     };
@@ -416,27 +415,24 @@ export default {
 </script>
 
 <style lang="scss">
-
 .globe-lang {
-    position: absolute;
-    height: 17px;
-    width: 17px;
-    background: #7fad39;
-    font-size: 10px;
-    color: #ffffff;
-    line-height: 15px;
-    text-align: center;
-    font-weight: 700;
-    display: inline-block;
-    border-radius: 50%;
-    /* position: absolute; */
-    /* top: 0; */
-    /* right: -12px; */
-    top: 8px;
-    right: 27px;
-
+  position: absolute;
+  height: 17px;
+  width: 17px;
+  background: #7fad39;
+  font-size: 10px;
+  color: #ffffff;
+  line-height: 15px;
+  text-align: center;
+  font-weight: 700;
+  display: inline-block;
+  border-radius: 50%;
+  /* position: absolute; */
+  /* top: 0; */
+  /* right: -12px; */
+  top: 8px;
+  right: 27px;
 }
-
 
 .navbar-item img {
   border-radius: 50%;
@@ -552,7 +548,6 @@ export default {
   padding: 0px !important;
   text-align: end;
   display: block;
-  
 }
 
 .header_cart ul {
@@ -594,8 +589,10 @@ export default {
   color: #2c3e50;
   padding-inline-end: 2px;
 }
-@media (max-width:670px) {
-    .header_cart {  display: none !important;     }
+@media (max-width: 670px) {
+  .header_cart {
+    display: none !important;
+  }
 }
 /*--------------------------- */
 #nav {
@@ -650,9 +647,9 @@ export default {
 }
 
 @media screen and (max-width: 1024px) {
-.nav-borger-hide-image{
-   display: none;
-}
+  .nav-borger-hide-image {
+    display: none;
+  }
   .navbar-item {
     border-bottom: 1px solid #ebebeb !important;
   }
@@ -748,7 +745,6 @@ export default {
     width: 150px !important;
     height: 150px !important;
   }
-
 }
 /*-------- */
 @media only screen and (min-width: 467px) and (max-width: 768px) {
