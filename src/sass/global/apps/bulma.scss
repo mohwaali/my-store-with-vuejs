@@ -1,0 +1,28 @@
+
+.column {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.user {
+  background: #efeef5;
+  padding: 50px;
+  border: 1px solid #e4e4e4;
+  border-radius: 4px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+//columns
+@media screen and (min-width: 769px) {
+  .column.is-4,
+  .column.is-4-tablet {
+    flex: none;
+  }
+}
+@media screen and (max-width: 769px) {
+  .user {
+    width: 100%;
+  }
+}

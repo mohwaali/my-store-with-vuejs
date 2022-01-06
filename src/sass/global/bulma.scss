@@ -1,0 +1,182 @@
+.column {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.user {
+  background: #ffffff;
+  padding: 50px;
+  border: 1px solid #e4e4e4;
+
+  border-radius: 8px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  margin-top: 50px;
+}
+.logins {
+  background: #ffffff;
+  padding: 50px;
+  border: 1px solid #e4e4e4;
+  border-radius: 8px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+  margin-top: 50px;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+}
+
+.nav-b {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  padding: 0.75rem;
+}
+
+.is-line-height-4 {
+  line-height: 5;
+}
+.is-space-10 {
+  margin: 0 10px;
+}
+
+.button-search-rtl button {
+  border-radius: 0px;
+  border-bottom-left-radius: 4px;
+  border-top-left-radius: 4px;
+  padding-inline-end: 25px;
+  padding-inline-start: 25px;
+}
+.button-search-ltr button {
+  border-radius: 0px;
+  border-bottom-right-radius: 4px;
+  border-top-right-radius: 4px;
+  padding-inline-end: 25px;
+  padding-inline-start: 25px;
+}
+.dirrtl {
+  direction: rtl;
+}
+.dirltr {
+  direction: ltr;
+}
+
+.navsidebartop {
+  display: none;
+}
+#logos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  position: relative;
+  justify-content: center;
+  align-content: space-around;
+}
+
+#logos img {
+  width: 110px;
+  height: 35px;
+}
+//columns
+.columnss {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+.columnn {
+  display: block;
+  flex-basis: 0;
+  flex-grow: 0;
+  flex-shrink: 0;
+  /*padding: 0.75rem;*/
+}
+.columnn.is-10 {
+  flex: none;
+  width: 83.33333337%;
+}
+.columnn.is-9 {
+  flex: none;
+  width: 75%;
+}
+.columnn.is-1 {
+  flex: none;
+  width: 8.33333337%;
+}
+.columnn.is-2 {
+  flex: none;
+  width: 16.66666674%;
+}
+
+.is-left {
+  position: absolute;
+  top: 9px;
+  right: 0px;
+  z-index: 100;
+  padding: 0 1em;
+}
+
+.is-center {
+  position: relative;
+}
+.is-rigth {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+.is-center input {
+  padding-inline-end: 61px;
+  padding-inline-start: 100px;
+}
+.hidden {
+  display: none;
+}
+@media screen and (min-width: 769px) {
+  .column.is-4,
+  .column.is-4-tablet {
+    flex: none;
+  }
+}
+@media screen and (max-width: 769px) {
+  .hidden {
+    display: flex;
+  }
+  .columnn.is-9 {
+    flex: none;
+    width: 50%;
+  }
+  .columnn.is-2 {
+    flex: none;
+    width: 30%;
+  }
+
+  .tops {
+    position: relative;
+    margin-top: 75px;
+  }
+
+  .formGrop {
+    width: 100%;
+  }
+
+  .user,
+  .logins {
+    width: 100%;
+    padding: 25px;
+    margin-top: 0px;
+  }
+  .is-hide {
+    display: none;
+  }
+  .navsidebartop {
+    display: inline-flex;
+  }
+}
